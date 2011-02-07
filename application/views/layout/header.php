@@ -6,6 +6,13 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
 <meta name="description" content="Stay up to date with DC Universe Online news, guides, and more.">
 <meta name="robots" content="index,follow">
+<link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/css/global.css">
+<?php if (isset($jquery_slider)) { ?>
+<link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/css/featured-content.css" />
+<script type="text/javascript" src="<?=base_url();?>assets/js/jquery.js"></script>
+<script type="text/javascript" src="<?=base_url();?>assets/js/jquery-easing.js"></script>
+<script type="text/javascript" src="<?=base_url();?>assets/js/jquery-featured-content.js"></script>
+<?php } ?>
 <?php if (isset($tiny_mce)) { ?>
 <!-- TinyMCE -->
 <script type="text/javascript" src="<?=base_url();?>assets/js/tiny_mce/tiny_mce.js"></script>
@@ -24,6 +31,55 @@
 </script>
 <!-- /TinyMCE -->
 <?php } ?>
+<?php if (isset($jquery_slider)) { ?>
+<script type="text/javascript">
+ $(document).ready( function(){	
+		var buttons = { previous:$('#featured-story .featured-previous') ,
+						next:$('#featured-story .featured-next') };
+						
+		$obj = $('#featured-story').featuredJSidernews( { interval : 7000,
+												direction		: 'opacitys',	
+											 	easing			: 'easeInOutExpo',
+												duration		: 1200,
+												maxItemDisplay  : 3,
+												navPosition     : 'horizontal', // horizontal
+												navigatorHeight : 29,
+												navigatorWidth  : 76,
+												mainWidth:640,
+												buttons			: buttons} );	
+	});
+</script>
+<?php } ?>
 </head>
 <body>
-<div id="container"> 
+
+    <div id="container">
+        <div id="header">
+            <div class="logo">
+                <a href="/">DCUO Nexus</a>
+            </div>
+            <div class="nav">
+            	<ul>
+                	<li><a href="/" class="selected">Home</a></li>
+                	<li><a href="/news">News</a></li>
+                	<li><a href="/guides">Guides</a></li>
+                	<li><a href="/wiki">Wiki</a></li>
+                	<li><a href="/dev-updates">Dev Tracker</a></li>
+                </ul>
+                <?php if ($this->session->userdata('username') != false) { ?>
+                    <div class="register">
+                        <a href="/logout">Logout</a>
+                    </div>
+                    <div class="welcome">
+                    	Welcome, <strong><?php echo $this->session->userdata('display_name'); ?></strong>
+                    </div>
+                <?php }else{ ?>
+                    <div class="register">
+                        <a href="/register">Register</a>
+                    </div>
+                    <div class="login">
+                        <a href="/login">Login</a>
+                    </div>
+                <? } ?>
+            </div>
+        </div>
