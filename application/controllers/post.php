@@ -65,6 +65,16 @@ class Post extends CI_Controller {
                 $config['height']	= 121;
 
                 $this->load->library('image_lib', $config);
+                $this->image_lib->clear();
+
+                $config['image_library'] = 'gd2';
+                $config['source_image']	= $this->config->item('upload_path').'images/posts/article-'.$insert_id.'-640x250.jpg';
+                $config['new_image'] = $this->config->item('upload_path').'images/posts/article-'.$insert_id.'-70x27.jpg';
+                $config['maintain_ratio'] = TRUE;
+                $config['width']	 = 70;
+                $config['height']	= 27;
+
+                $this->load->library('image_lib', $config);
 
                 $this->image_lib->resize();
                 echo $this->image_lib->display_errors();

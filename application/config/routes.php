@@ -54,6 +54,7 @@ $route['dev-updates'] = 'post/category/dev-updates';
 $route['profile/(:any)'] = 'user/profile/$1';
 
 $route['login'] = 'user/login';
+$route['logout'] = 'user/logout';
 $route['register'] = 'user/register';
 
 /* End of file routes.php */

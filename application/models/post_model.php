@@ -11,6 +11,7 @@ class Post_model extends CI_Model {
         $this->db->from('posts AS p');
         $this->db->join('categories AS c', 'c.id = p.category_id');
         $this->db->join('users AS u','u.id = p.user_id');
+        $this->db->where(array('p.published' =>1));
         $this->db->order_by('p.id','desc');
         $this->db->limit($num,$offset);
         $query = $this->db->get();
@@ -22,7 +23,7 @@ class Post_model extends CI_Model {
         $this->db->from('posts AS p');
         $this->db->join('categories AS c', 'c.id = p.category_id');
         $this->db->join('users AS u','u.id = p.user_id');
-        $this->db->where(array('p.category_id' => $category_id));
+        $this->db->where(array('p.category_id' => $category_id,'p.published' => 1));
         $this->db->order_by('p.id','desc');
         $this->db->limit($num,$offset);
         $query = $this->db->get();
@@ -54,19 +55,28 @@ class Post_model extends CI_Model {
         $this->user_id = $this->session->userdata('id');
         $this->category_id = $this->input->post('category');
         $this->post_title = $this->input->post('post_title');
-        $this->post_seo = strtolower(url_title($this->input->post('post_title')));
         $this->post_content = $this->input->post('post_content');
         $this->post_excerpt = $this->input->post('post_excerpt');
         $this->keywords = $this->input->post('keywords');
         $this->posted_on = time();
         $this->db->insert('posts',$this);
-        return $this->db->insert_id();
+        $last_id = $this->db->insert_id();
+
+        $updateArray = array('post_seo' => $last_id.'-'.strtolower(url_title($this->input->post('post_title'))));
+        $this->db->where('id', $last_id);
+        $this->db->update('posts',$updateArray);
+        return $last_id;
     }
 
     function getPostIDBySeo($post_seo) {
         $query = $this->db->get_where('posts',array('post_seo' => $post_seo));
         $result = $query->row();
         return $result->id;
+    }
+
+    function getFeatured($num = 3) {
+        $query = $this->db->get_where('posts',array('featured' => 1,'published' => 1));
+        return $query->result();
     }
 }
 
