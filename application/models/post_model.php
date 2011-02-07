@@ -98,7 +98,6 @@ class Post_model extends CI_Model {
             $this->db->limit($num,$offset);
         }
         $query = $this->db->get();
-        print_r($query->result());
         return $query->result();
     }
 }
