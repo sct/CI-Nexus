@@ -17,8 +17,18 @@ class Post extends CI_Controller {
 
     function show() {
         if (($post_seo = $this->uri->segment(2)) != "" || ($post_seo = $this->uri->segment(3)) != "") {
+            $this->load->helper('form');
+            $this->load->library('form_validation');
+
+            $this->form_validation->set_rules('comment-text', 'Comment Content', 'required');
+
+            if ($this->form_validation->run() == TRUE) {
+                $comment_id = $this->post_model->createComment();
+            }
+
             $post_id = $this->post_model->getPostIDBySeo($post_seo);
             $data['post'] = $this->post_model->getPost($post_id);
+            $data['comments'] = $this->post_model->getComments($post_id);
             $this->load->view('layout/header');
             $this->load->view('post/show',$data);
             $this->load->view('layout/footer');

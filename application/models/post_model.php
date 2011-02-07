@@ -31,7 +31,7 @@ class Post_model extends CI_Model {
     }
 
     function getPost($post_id) {
-        $this->db->select('p.*,c.*,u.display_name');
+        $this->db->select('p.*,c.category_name,c.category_display,u.display_name');
         $this->db->from('posts AS p');
         $this->db->join('categories AS c', 'c.id = p.category_id');
         $this->db->join('users AS u','u.id = p.user_id');
@@ -76,6 +76,29 @@ class Post_model extends CI_Model {
 
     function getFeatured($num = 3) {
         $query = $this->db->get_where('posts',array('featured' => 1,'published' => 1));
+        return $query->result();
+    }
+
+    function createComment() {
+        $this->user_id = $this->session->userdata('id');
+        $this->post_id = $this->input->post('post_id');
+        $this->content = $this->input->post('comment-text');
+        $this->posted_on = time();
+
+        $this->db->insert('comments',$this);
+        return $this->db->insert_id();
+    }
+
+    function getComments($post_id,$num = 0, $offset = 0) {
+        $this->db->select('c.*,u.display_name');
+        $this->db->from('comments AS c');
+        $this->db->join('users AS u','c.user_id = u.id');
+        $this->db->where('c.post_id',$post_id);
+        if ($num != 0) {
+            $this->db->limit($num,$offset);
+        }
+        $query = $this->db->get();
+        print_r($query->result());
         return $query->result();
     }
 }
