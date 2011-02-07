@@ -3655,3 +3655,44 @@
 2011-02-06 08:43:10 (EST)	2 Warning	imagesx(): supplied argument is not a valid Image resource	File: fns_tinybrowser.php	Line: 49	
 2011-02-06 08:43:10 (EST)	2 Warning	imagesy(): supplied argument is not a valid Image resource	File: fns_tinybrowser.php	Line: 50	
 2011-02-06 08:43:10 (EST)	2 Warning	imagedestroy(): supplied argument is not a valid Image resource	File: tinybrowser.php	Line: 128	
+2011-02-06 21:45:59 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:45:59 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:45:59 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:45:59 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:45:59 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:45:59 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:45:59 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:45:59 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:03 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:03 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:03 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:03 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:03 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:03 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:03 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:03 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:05 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:05 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:05 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:05 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:05 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:05 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:05 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:05 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:14 (CET)	2 Warning	imagejpeg() [<a href='function.imagejpeg'>function.imagejpeg</a>]: Unable to open 'C:/xampp/htdocs/assets/upload/images/_thumbs/_12642_214214861342_509316342_4475459_472927_n.jpg' for writing: No such file or directory	File: fns_tinybrowser.php	Line: 113	
+2011-02-06 21:46:14 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:14 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:14 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:14 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:14 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:14 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:14 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:14 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:16 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:16 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:16 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:16 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 355	
+2011-02-06 21:46:16 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:16 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:16 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	
+2011-02-06 21:46:16 (CET)	8192 	Function sql_regcase() is deprecated	File: fns_tinybrowser.php	Line: 371	

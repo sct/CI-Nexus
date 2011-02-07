@@ -41,10 +41,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'nexus';
+$db['default']['hostname'] = 'dcuonexusdb.db.6996914.hostedresource.com';
+$db['default']['username'] = 'dcuonexusdb';
+$db['default']['password'] = 'N3XU5db2011ftw';
+$db['default']['database'] = 'dcuonexusdb';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

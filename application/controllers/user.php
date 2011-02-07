@@ -38,6 +38,12 @@ class User extends CI_Controller {
         }
     }
 
+    function logout() {
+        $redirect = $_SERVER['HTTP_REFERER'];
+        $this->session->sess_destroy();
+        header('Location: '.$redirect);
+    }
+
 }
 
 ?>
