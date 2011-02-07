@@ -50,6 +50,23 @@
                 
             </div>
             <div class="content-inner">
+            	
+                <div id="news-list">
+                	<ul>
+   						<?php foreach ($posts as $post): ?>
+                        <li>
+                            <?php if (file_exists($this->config->item('upload_path').'images/posts/article-'.$post->id.'-310x121.jpg')) { ?>
+                            	<div class="image"><img src="<?=base_url()?>assets/upload/images/posts/article-<?=$post->id?>-310x121.jpg" /></div>
+                            <?php } ?>
+                            <div class="category-name"><?=$post->category_display?></div>
+                            <div class="title"><?=anchor($post->category_name.'/'.$post->post_seo,$post->post_title);?></div>                         
+                            <div class="posted-date"><?=date('F jS, Y @ g:i a',$post->posted_on);?> - <?=anchor($post->category_name.'/'.$post->post_seo.'#comments','No Comments Yet');?></div>
+                            <div class="excerpt"><?=$post->post_excerpt;?></div>
+                        </li>
+    					<?php endforeach; ?>
+                    </ul>
+                </div>
+            
                 <ul>
                 <?php foreach ($categories as $category): ?>
                 <li><?=anchor($category->category_name,$category->category_display);?></li>

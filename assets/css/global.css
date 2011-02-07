@@ -143,6 +143,7 @@ img {
 }
 
 #splash {
+	float: left;
 	width: 1000px;
 	min-height: 290px;
 	background: #ffffff url('/assets/images/splash-bg.jpg') top left repeat-x;
@@ -166,5 +167,74 @@ img {
 
 #content .content-inner {
 	background-color: #ffffff;
+	width: 964px;
+	padding: 18px;
 }
-	
+
+#content .content-inner .left {
+	float: left;
+	width: 670px;
+}
+
+#content .content-inner .right {
+	float: right;
+	width: 300px;
+}
+
+#news-list ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	width: 670px;
+	float: left;
+}
+
+#news-list ul li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	width: 325px;
+	margin-right: 5px;
+	float: left;
+}
+
+#news-list ul li img {
+	border: 3px solid #c7c7c7;
+}
+
+#news-list ul li .category-name {
+	position: relative;
+	z-index: 8;
+	float: left;
+	padding: 3px 8px;
+	color: #505050;
+	font-size: 12px;
+	background-color: #c7c7c7;
+	margin-top: -25px;
+	text-decoration: none;
+}
+
+#news-list ul li .title a {
+	color: #2a69a0;
+	width: 306px;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 20px;
+	text-decoration: none;
+}
+
+#news-list ul li .posted-date {
+	color: #a9a9a9;
+	font-size: 11px;
+}
+
+#news-list ul li .posted-date a {
+	color: #ff8300;
+	text-decoration: none;
+}
+
+#news-list ul li .excerpt {
+	color: #6e6e6e;
+	font-size: 12px;
+	margin-top: 10px;
+}
