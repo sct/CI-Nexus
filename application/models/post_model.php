@@ -7,11 +7,12 @@ class Post_model extends CI_Model {
     }
 
     function getPosts($num = 10,$offset = 0) {
-        $this->db->select('p.*,c.category_name,c.category_display,u.display_name');
+        $this->db->select('p.*,c.category_name,c.category_display,u.display_name,COUNT(cm.id) AS comment_count');
         $this->db->from('posts AS p');
         $this->db->join('categories AS c', 'c.id = p.category_id');
         $this->db->join('users AS u','u.id = p.user_id');
-        $this->db->where(array('p.published' =>1));
+        $this->db->join('comments AS cm','p.id = cm.post_id');
+        $this->db->where(array('p.published' => 1));
         $this->db->order_by('p.id','desc');
         $this->db->limit($num,$offset);
         $query = $this->db->get();
@@ -19,10 +20,11 @@ class Post_model extends CI_Model {
     }
 
     function getPostsByCategory($category_id,$num = 10,$offset = 0) {
-        $this->db->select('p.*,c.category_name,c.category_display,u.display_name');
+        $this->db->select('p.*,c.category_name,c.category_display,u.display_name,COUNT(cm.id) AS comment_count');
         $this->db->from('posts AS p');
         $this->db->join('categories AS c', 'c.id = p.category_id');
         $this->db->join('users AS u','u.id = p.user_id');
+        $this->db->join('comments AS cm','p.id = cm.post_id');
         $this->db->where(array('p.category_id' => $category_id,'p.published' => 1));
         $this->db->order_by('p.id','desc');
         $this->db->limit($num,$offset);
@@ -97,6 +99,17 @@ class Post_model extends CI_Model {
         if ($num != 0) {
             $this->db->limit($num,$offset);
         }
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function getRecentComments($num = 5, $offset = 0) {
+        $this->db->select('c.*,p.post_title,p.post_seo,u.display_name,ct.category_name,ct.category_display');
+        $this->db->from('comments AS c');
+        $this->db->join('users AS u','c.user_id = u.id');
+        $this->db->join('posts as p','p.id = c.post_id');
+        $this->db->join('categories AS ct','ct.id = p.category_id');
+        $this->db->limit($num,$offset);
         $query = $this->db->get();
         return $query->result();
     }
