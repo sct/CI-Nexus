@@ -60,7 +60,7 @@
                             <?php } ?>
                             <div class="category-name"><?=$post->category_display?></div>
                             <div class="title"><?=anchor($post->category_name.'/'.$post->post_seo,$post->post_title);?></div>                         
-                            <div class="posted-date"><?=date('F jS, Y @ g:i a',$post->posted_on);?> - <?=anchor($post->category_name.'/'.$post->post_seo.'#comments','No Comments Yet');?></div>
+                            <div class="posted-date"><?=date('F jS, Y @ g:i a',$post->posted_on);?> - <?=anchor($post->category_name.'/'.$post->post_seo.'#comments',comment_count($post->comment_count));?></div>
                             <div class="excerpt"><?=$post->post_excerpt;?></div>
                         </li>
     					<?php endforeach; ?>

@@ -7,12 +7,13 @@ class Post_model extends CI_Model {
     }
 
     function getPosts($num = 10,$offset = 0) {
-        $this->db->select('p.*,c.category_name,c.category_display,u.display_name,COUNT(cm.id) AS comment_count');
+        $this->db->select('p.*,c.category_name,c.category_display,u.display_name,COUNT(cm.post_id) AS comment_count');
         $this->db->from('posts AS p');
         $this->db->join('categories AS c', 'c.id = p.category_id');
         $this->db->join('users AS u','u.id = p.user_id');
-        $this->db->join('comments AS cm','p.id = cm.post_id');
+        $this->db->join('comments AS cm','p.id = cm.post_id','left');
         $this->db->where(array('p.published' => 1));
+        $this->db->group_by('cm.post_id');
         $this->db->order_by('p.id','desc');
         $this->db->limit($num,$offset);
         $query = $this->db->get();
@@ -20,12 +21,13 @@ class Post_model extends CI_Model {
     }
 
     function getPostsByCategory($category_id,$num = 10,$offset = 0) {
-        $this->db->select('p.*,c.category_name,c.category_display,u.display_name,COUNT(cm.id) AS comment_count');
+        $this->db->select('p.*,c.category_name,c.category_display,u.display_name,COUNT(cm.post_id) AS comment_count');
         $this->db->from('posts AS p');
         $this->db->join('categories AS c', 'c.id = p.category_id');
         $this->db->join('users AS u','u.id = p.user_id');
-        $this->db->join('comments AS cm','p.id = cm.post_id');
+        $this->db->join('comments AS cm','p.id = cm.post_id','left');
         $this->db->where(array('p.category_id' => $category_id,'p.published' => 1));
+        $this->db->group_by('cm.post_id');
         $this->db->order_by('p.id','desc');
         $this->db->limit($num,$offset);
         $query = $this->db->get();
@@ -61,6 +63,8 @@ class Post_model extends CI_Model {
         $this->post_excerpt = $this->input->post('post_excerpt');
         $this->keywords = $this->input->post('keywords');
         $this->posted_on = time();
+        $this->published = $this->input->post('published');
+        $this->featured = $this->input->post('featured');
         $this->db->insert('posts',$this);
         $last_id = $this->db->insert_id();
 

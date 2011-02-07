@@ -7,6 +7,7 @@ class Home extends CI_Controller {
     }
 
     function index() {
+        $this->load->helper('nexus_tools');
         $this->load->model('post_model');
         $data_header['jquery_slider'] = 1;
 	$data['posts'] = $this->post_model->getPosts(10);
