@@ -13,10 +13,12 @@ class Post_model extends CI_Model {
         $this->db->join('users AS u','u.id = p.user_id');
         $this->db->join('comments AS cm','p.id = cm.post_id','left');
         $this->db->where(array('p.published' => 1));
-        $this->db->group_by('cm.post_id');
+        $this->db->group_by('p.id');
         $this->db->order_by('p.id','desc');
         $this->db->limit($num,$offset);
         $query = $this->db->get();
+
+        echo $this->db->last_query();
         return $query->result();
     }
 
@@ -27,10 +29,12 @@ class Post_model extends CI_Model {
         $this->db->join('users AS u','u.id = p.user_id');
         $this->db->join('comments AS cm','p.id = cm.post_id','left');
         $this->db->where(array('p.category_id' => $category_id,'p.published' => 1));
-        $this->db->group_by('cm.post_id');
+        $this->db->group_by('p.id');
         $this->db->order_by('p.id','desc');
         $this->db->limit($num,$offset);
         $query = $this->db->get();
+
+        echo $this->db->last_query();
         return $query->result();
     }
 
