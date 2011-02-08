@@ -75,6 +75,7 @@ class Post extends CI_Controller {
                 $config['height']	= 121;
 
                 $this->load->library('image_lib', $config);
+                $this->image_lib->resize();
                 $this->image_lib->clear();
 
                 $config['image_library'] = 'gd2';
@@ -84,8 +85,7 @@ class Post extends CI_Controller {
                 $config['width']	 = 70;
                 $config['height']	= 27;
 
-                $this->load->library('image_lib', $config);
-
+                $this->image_lib->initialize($config);
                 $this->image_lib->resize();
                 echo $this->image_lib->display_errors();
             }

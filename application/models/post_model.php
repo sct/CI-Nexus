@@ -18,7 +18,6 @@ class Post_model extends CI_Model {
         $this->db->limit($num,$offset);
         $query = $this->db->get();
 
-        echo $this->db->last_query();
         return $query->result();
     }
 
@@ -34,7 +33,6 @@ class Post_model extends CI_Model {
         $this->db->limit($num,$offset);
         $query = $this->db->get();
 
-        echo $this->db->last_query();
         return $query->result();
     }
 
