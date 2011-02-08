@@ -70,7 +70,7 @@ class Post_model extends CI_Model {
         $this->db->insert('posts',$this);
         $last_id = $this->db->insert_id();
 
-        $updateArray = array('post_seo' => $last_id.'-'.strtolower(url_title($this->input->post('post_title'))));
+        $updateArray = array('post_seo' => $last_id.'-'.strtolower(url_title(trim($this->input->post('post_title')))));
         $this->db->where('id', $last_id);
         $this->db->update('posts',$updateArray);
         return $last_id;
@@ -82,8 +82,18 @@ class Post_model extends CI_Model {
         return $result->id;
     }
 
-    function getFeatured($num = 3) {
-        $query = $this->db->get_where('posts',array('featured' => 1,'published' => 1));
+    function getFeatured($num =3) {
+        $this->db->select('p.*,c.category_name,c.category_display,u.display_name,COUNT(cm.post_id) AS comment_count');
+        $this->db->from('posts AS p');
+        $this->db->join('categories AS c', 'c.id = p.category_id');
+        $this->db->join('users AS u','u.id = p.user_id');
+        $this->db->join('comments AS cm','p.id = cm.post_id','left');
+        $this->db->where(array('p.published' => 1,'p.featured' => 1));
+        $this->db->group_by('p.id');
+        $this->db->order_by('p.id','desc');
+        $this->db->limit($num);
+        $query = $this->db->get();
+
         return $query->result();
     }
 
