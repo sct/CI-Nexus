@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/dcuo-nexus/!svn/ver/101/trunk/application/views/user
+END
+register_success.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/dcuo-nexus/!svn/ver/99/trunk/application/views/user/register_success.php
+END
+recover_success.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/dcuo-nexus/!svn/ver/58/trunk/application/views/user/recover_success.php
+END
+recover_sent.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/dcuo-nexus/!svn/ver/58/trunk/application/views/user/recover_sent.php
+END
+edit_avatar_step1.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/dcuo-nexus/!svn/ver/101/trunk/application/views/user/edit_avatar_step1.php
+END
+edit_avatar_step2.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/dcuo-nexus/!svn/ver/101/trunk/application/views/user/edit_avatar_step2.php
+END
+profile.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/dcuo-nexus/!svn/ver/96/trunk/application/views/user/profile.php
+END
+edit_avatar.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/dcuo-nexus/!svn/ver/35/trunk/application/views/user/edit_avatar.php
+END
+register.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/dcuo-nexus/!svn/ver/95/trunk/application/views/user/register.php
+END
+edit_profile.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/dcuo-nexus/!svn/ver/35/trunk/application/views/user/edit_profile.php
+END
+recover.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/dcuo-nexus/!svn/ver/58/trunk/application/views/user/recover.php
+END
+edit_password.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/dcuo-nexus/!svn/ver/45/trunk/application/views/user/edit_password.php
+END
+login.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/dcuo-nexus/!svn/ver/95/trunk/application/views/user/login.php
+END

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/dcuo-nexus/!svn/ver/115/trunk/application/views/forum
+END
+reply.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/dcuo-nexus/!svn/ver/107/trunk/application/views/forum/reply.php
+END
+newthread.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/dcuo-nexus/!svn/ver/107/trunk/application/views/forum/newthread.php
+END
+viewthread.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/dcuo-nexus/!svn/ver/115/trunk/application/views/forum/viewthread.php
+END
+viewforum.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/dcuo-nexus/!svn/ver/113/trunk/application/views/forum/viewforum.php
+END
+breadcrumb.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/dcuo-nexus/!svn/ver/113/trunk/application/views/forum/breadcrumb.php
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/dcuo-nexus/!svn/ver/113/trunk/application/views/forum/index.php
+END

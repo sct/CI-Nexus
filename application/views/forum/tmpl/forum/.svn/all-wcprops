@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/dcuo-nexus/!svn/ver/113/trunk/application/views/forum/tmpl/forum
+END
+sticky.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/dcuo-nexus/!svn/ver/113/trunk/application/views/forum/tmpl/forum/sticky.php
+END
+thread.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/dcuo-nexus/!svn/ver/113/trunk/application/views/forum/tmpl/forum/thread.php
+END
